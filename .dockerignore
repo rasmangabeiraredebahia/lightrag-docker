@@ -1,0 +1,4 @@
+# Este arquivo ignora pastas de dados e configurações locais durante builds
+
+data/
+env/

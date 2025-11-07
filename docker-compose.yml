@@ -1,0 +1,19 @@
+# Este docker-compose sobe apenas o LightRAG Server usando OpenAI via API.
+# Configure sua `OPENAI_API_KEY` no arquivo `env/.env` antes de executar.
+# Ao executar `docker compose up`, a UI ficará acessível em http://localhost:8000
+
+version: "3.8"
+
+services:
+  lightrag:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lightrag-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/lightrag:/app/LightRAG/data
+      - ./env/.env:/app/LightRAG/.env:ro
+    # O servidor lê configurações do arquivo .env montado acima.
+    # Não há necessidade de variáveis duplicadas aqui.
