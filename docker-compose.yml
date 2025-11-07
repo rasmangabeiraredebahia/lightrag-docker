@@ -12,6 +12,6 @@ services:
       - "8000:8000"
     volumes:
       - ./data/lightrag:/app/LightRAG/data
-      - ./env/.env:/app/LightRAG/.env:ro
+      - ./.env:/app/LightRAG/.env:ro
     # O servidor lê configurações do arquivo .env montado acima.
     # Não há necessidade de variáveis duplicadas aqui.
